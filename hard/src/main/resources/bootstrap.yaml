@@ -1,0 +1,20 @@
+spring:
+  devtools:
+    restart:
+      aditional-paths: src/main/java
+  application:
+    name: hard-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081/
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST}/${POSTGRES_DATABASE}
+    username: postgres
+    password: postgresql
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: PostgreSQLDialect
+      ddl-auto: create
