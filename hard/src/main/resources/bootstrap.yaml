@@ -3,14 +3,14 @@ spring:
     restart:
       aditional-paths: src/main/java
   application:
-    name: hard-service
+    name: hard
   cloud:
     config:
       enabled: true
       uri: http://localhost:8081/
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${POSTGRES_HOST}/${POSTGRES_DATABASE}
+    url: jdbc:postgresql://localhost:5432/hard
     username: postgres
     password: postgresql
   jpa:
