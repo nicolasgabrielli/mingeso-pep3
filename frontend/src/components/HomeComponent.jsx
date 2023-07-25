@@ -1,9 +1,13 @@
 import React from 'react';
-import { Grid, Button, Typography, styled, useTheme } from '@mui/material';
+import { Grid, Button, Typography, styled, useTheme, IconButton } from '@mui/material';
 import { AppBar, Toolbar } from '@mui/material';
+import background from '../images/background3.jpg';
 import '../App.css';
 import '../fonts/TitilliumWeb-Regular.ttf';
 import '../fonts/TitilliumWeb-Bold.ttf';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import { Link } from 'react-router-dom';
+
 
 const CustomButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.secondary.main,
@@ -29,6 +33,7 @@ const Container = styled(Grid)(({ theme }) => ({
   minHeight: '100vh',
   backgroundColor: theme.palette.primary.main,
   padding: theme.spacing(5),
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${background})`,
 }));
 
 const ButtonWrapper = styled('div')(({ theme }) => ({
@@ -52,12 +57,12 @@ const Navbar = styled(AppBar)(({ theme }) => ({
 }));
 
 const NavbarTitle = styled(Typography)(({ theme }) => ({
-  color: "#FFFFFF", // Cambia el color del título de la Navbar
+  color: "#FFFFFF",
 }));
 
 const ToolbarWrapper = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   fontFamily: 'Bold',
 }));
 
@@ -71,6 +76,15 @@ const HomeComponent = () => {
           <NavbarTitle variant="h4">
             Easy Coding
           </NavbarTitle>
+          <Link to="create-question">
+            <Button
+              color="primary"
+              endIcon={<AddCircleRoundedIcon />}
+
+            >
+              Agregar Pregunta
+            </Button>
+          </Link>
         </ToolbarWrapper>
       </Navbar>
       <Container theme={theme} container justifyContent="center" alignItems="center">

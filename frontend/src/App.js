@@ -5,14 +5,15 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import './fonts/TitilliumWeb-Regular.ttf';
 import './fonts/TitilliumWeb-Bold.ttf';
+import CreateQuestion from './components/CreateQuestion';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#0D1321',
+      main: '#FFFFFF',
     },
     secondary: {
-      main: '#1D2D44',
+      main: '#003A5A',
     },
     tertiary: {
       main: '#3E5C76',
@@ -29,6 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomeComponent />} />
+          <Route path="/create-question" element={<CreateQuestion />} />
         </Routes>
       </Router>
     </ThemeProvider>
